@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaos Cash</title>
+  <meta name="theme-color" content="#ff006e">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a0033 0%, #330033 50%, #000000 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ff006e, #ffbe0b, #00f5d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      text-shadow: 0 0 30px rgba(255,0,110,0.5);
+    }
+    .tagline {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 30px;
+      max-width: 400px;
+    }
+    .chaos-btn {
+      background: linear-gradient(90deg, #ff006e, #8338ec);
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255,0,110,0.4);
+      transition: transform 0.2s;
+    }
+    .chaos-btn:active { transform: scale(0.95); }
+    .stats {
+      margin-top: 40px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat {
+      background: rgba(255,255,255,0.05);
+      padding: 15px 25px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-num { font-size: 1.8rem; font-weight: bold; color: #00f5d4; }
+    .stat-label { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+    .disclaimer {
+      margin-top: 50px;
+      font-size: 0.7rem;
+      color: #555;
+      max-width: 350px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">CHAOS CASH</div>
+  <div class="tagline">The app that was supposed to make you a thousand bucks a day. Spoiler: it won't. But it's free and it looks cool.</div>
+  <button class="chaos-btn" onclick="generateChaos()">GENERATE PURE CHAOS</button>
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="clicks">0</div><div class="stat-label">Clicks</div></div>
+    <div class="stat"><div class="stat-num" id="profit">$0</div><div class="stat-label">Fake Profit</div></div>
+    <div class="stat"><div class="stat-num" id="sanity">100%</div><div class="stat-label">Sanity Left</div></div>
+  </div>
+  <div class="disclaimer">
+    This is a joke scaffold. Real money requires real work, real users, and real marketing. No magic button. Go build something people actually need.
+  </div>
+  <script>
+    let clicks = 0;
+    let profit = 0;
+    let sanity = 100;
+    function generateChaos() {
+      clicks++;
+      profit += Math.floor(Math.random() * 50);
+      sanity = Math.max(0, sanity - Math.floor(Math.random() * 3));
+      document.getElementById('clicks').textContent = clicks;
+      document.getElementById('profit').textContent = '$' + profit;
+      document.getElementById('sanity').textContent = sanity + '%';
+      if (sanity < 20) {
+        document.querySelector('.logo').textContent = 'YOU ARE BROKEN';
+      }
+    }
+    if ('serviceWorker' in navigator) {
+      // PWA ready
+    }
+  </script>
+</body>
+</html>
