@@ -1,33 +1,25 @@
-# Chaos Cash - Digistore24 Affiliate Rotator
+# Know Your Rights — Legal PDFs + Sales Funnel
 
-A dead-simple PWA that rotates between your Digistore24 promolinks.
+Two educational PDFs + a complete sales tunnel. Built for broke people who want to sell something real instead of chasing unicorns.
 
-## How to actually use it (no magic, just work)
+## What's in here
 
-1. Go to digistore24.com, become an affiliate (free).
-2. Find offers you want to promote. Get approved by vendors.
-3. Copy your **affiliate ID** and the **product IDs**.
-4. Edit `digistore-rotator.html` — replace `YOUR_AFFILIATE_ID` and the `OFFERS` array.
-5. Host this somewhere free (GitHub Pages, Netlify, Cloudflare Pages).
-6. Drive traffic: post on X, TikTok, Reddit, your own email list. No popups, no adware, no spam — Digistore24 bans that shit and will nuke your account.
-7. Track real earnings in your Digistore24 dashboard under Reports > Transactions.
+- `pdfs/Your_Rights_When_Cops_Show_Up.md` — Street rights guide (convert to PDF)
+- `pdfs/Court_Prep_Checklist.md` — Courtroom prep checklist (convert to PDF)
+- `index.html` — Dark, eye-catching landing page (host on GitHub Pages / Netlify)
+- `emails/` — 3-email follow-up sequence
 
-## The brutal truth
+## How to sell this shit
 
-This file does NOT make money by itself. It is a redirect button. You still need humans to click it and buy. Most affiliates make $0 for months. The ones who make $1k/day have audiences, content, or paid ads.
+1. Convert the two `.md` files to clean PDFs (Google Docs → Export → PDF).
+2. Create a Payhip account. Upload both PDFs. Price at $12 each or $24 bundle.
+3. Copy your Payhip product key and replace `REPLACE_WITH_YOUR_PAYHIP_KEY` in `index.html`.
+4. Push this repo → enable GitHub Pages → your landing page is live.
+5. Drive traffic: Reddit (r/sidehustle, r/legaladvice, r/personalfinance), X, TikTok. Post the free value first, link second.
+6. Send the email sequence to anyone who grabs a free version or signs up.
 
-Promolink format: `https://www.checkout-ds24.com/redir/PRODUCT-ID/AFFILIATE-ID/CAMPAIGN-KEY`
+## Legal disclaimer
 
-Cookie lasts 180 days (GDPR) or 365 days (US). Last-click attribution. If someone clicks another affiliate's link after yours, you lose the sale.
+These are educational resources, not legal advice. Laws vary by jurisdiction. Always recommend consulting a licensed attorney. This protects you from the bar association showing up at your door.
 
-## Compliance
-
-- No adware, spyware, popups, pop-unders
-- No incentivized leads (don't pay people to click)
-- No spam emails
-- No malware or IP cloaking
-- Disclose affiliate relationship where required (FTC)
-
-Break the rules and Digistore24 blacklists you. Don't be a dumbass.
-
-Built with spite. Profits not guaranteed.
+Built with spite, zero budget, and a phone. Go make some money.
