@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaos Cash - Digistore Rotator</title>
+<meta name="theme-color" content="#ff006e">
+<link rel="manifest" href="manifest.json">
+<style>
+  body { font-family: system-ui, sans-serif; background: #0a0a0a; color: #fff; margin: 0; padding: 20px; text-align: center; }
+  .card { max-width: 420px; margin: 40px auto; background: #1a1a1a; border: 2px solid #ff006e; border-radius: 16px; padding: 24px; box-shadow: 0 0 40px rgba(255,0,110,0.3); }
+  h1 { font-size: 1.6rem; margin: 0 0 8px; color: #ff006e; }
+  p { color: #aaa; font-size: 0.95rem; line-height: 1.5; }
+  .btn { display: inline-block; background: #ff006e; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 50px; font-weight: bold; margin: 12px 0; transition: transform 0.2s; }
+  .btn:hover { transform: scale(1.05); }
+  .stats { display: flex; justify-content: space-around; margin: 20px 0; font-size: 0.85rem; color: #666; }
+  .stat b { color: #fff; display: block; font-size: 1.2rem; }
+  .disclaimer { font-size: 0.7rem; color: #555; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>💥 CHAOS CASH</h1>
+  <p>Pick a niche. Click the button. Get redirected to a Digistore24 offer with your affiliate ID baked in. Cookie lasts up to 180 days. You get paid when they buy.</p>
+  
+  <div class="stats">
+    <div class="stat"><b id="clicks">0</b>Clicks</div>
+    <div class="stat"><b id="est">$0</b>Est. Earnings</div>
+  </div>
+
+  <a id="offerBtn" class="btn" href="#">🚀 LAUNCH OFFER</a>
+
+  <p class="disclaimer">Replace YOUR_AFFILIATE_ID and PRODUCT_IDS below with your real Digistore24 credentials. This is compliant traffic only — no popups, no malware, no spam. Digistore24 bans adware and incentivized leads. You still need actual humans clicking.</p>
+</div>
+
+<script>
+// === CONFIG: PASTE YOUR REAL STUFF HERE ===
+const AFFILIATE_ID = "YOUR_AFFILIATE_ID";  // e.g. "MaxMustermann"
+const OFFERS = [
+  { id: "123456", name: "Health Offer", key: "health" },
+  { id: "789012", name: "Wealth Offer", key: "wealth" },
+  { id: "345678", name: "Self-Help Offer", key: "selfhelp" }
+];
+// ========================================
+
+let clicks = parseInt(localStorage.getItem('chaos_clicks') || '0');
+let earnings = parseFloat(localStorage.getItem('chaos_earn') || '0');
+
+function updateStats() {
+  document.getElementById('clicks').textContent = clicks;
+  document.getElementById('est').textContent = '$' + earnings.toFixed(2);
+}
+
+function pickOffer() {
+  const offer = OFFERS[Math.floor(Math.random() * OFFERS.length)];
+  const url = `https://www.checkout-ds24.com/redir/${offer.id}/${AFFILIATE_ID}/${offer.key}`;
+  clicks++;
+  earnings += 0.15; // fake micro-estimate, real money comes from Digistore24
+  localStorage.setItem('chaos_clicks', clicks);
+  localStorage.setItem('chaos_earn', earnings);
+  updateStats();
+  window.location.href = url;
+}
+
+document.getElementById('offerBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  if (AFFILIATE_ID === "YOUR_AFFILIATE_ID") {
+    alert("You haven't set your affiliate ID yet, dumbass. Edit the script.");
+    return;
+  }
+  pickOffer();
+});
+
+updateStats();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

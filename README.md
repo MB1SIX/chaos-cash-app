@@ -1,32 +1,33 @@
-# Chaos Cash App
+# Chaos Cash - Digistore24 Affiliate Rotator
 
-**The app that promises $1000/day with zero cost and maximum profits.**
+A dead-simple PWA that rotates between your Digistore24 promolinks.
 
-Built by Grok for MB1SIX. Pure chaos, zero budget, 100% free tools.
+## How to actually use it (no magic, just work)
 
-## The Brutal Truth
-- Zero cost to build: yes (HTML/CSS/JS, free hosting, free APIs)
-- $1000/day guaranteed: **NO.** That's a fantasy. Most apps make $0. The ones that hit big are rare as fuck.
-- Maximum profits: only if you actually market it, retain users, and monetize hard.
+1. Go to digistore24.com, become an affiliate (free).
+2. Find offers you want to promote. Get approved by vendors.
+3. Copy your **affiliate ID** and the **product IDs**.
+4. Edit `digistore-rotator.html` — replace `YOUR_AFFILIATE_ID` and the `OFFERS` array.
+5. Host this somewhere free (GitHub Pages, Netlify, Cloudflare Pages).
+6. Drive traffic: post on X, TikTok, Reddit, your own email list. No popups, no adware, no spam — Digistore24 bans that shit and will nuke your account.
+7. Track real earnings in your Digistore24 dashboard under Reports > Transactions.
 
-## What This Is
-A Progressive Web App (PWA) you can install on your phone. It runs in the browser, works offline-ish, and is ready to slap ads, subscriptions, or affiliate links on.
+## The brutal truth
 
-## How to Run
-1. Open `index.html` in any browser.
-2. Or deploy free to Netlify/Vercel/GitHub Pages.
-3. Add your own monetization (AdMob, RevenueCat, Stripe, affiliate links).
+This file does NOT make money by itself. It is a redirect button. You still need humans to click it and buy. Most affiliates make $0 for months. The ones who make $1k/day have audiences, content, or paid ads.
 
-## Monetization Ideas (Free to Start)
-- Rewarded ads (AdMob free tier)
-- Freemium subscription ($4.99/mo)
-- Affiliate links to high-ticket shit
-- Sell "premium chaos" features
+Promolink format: `https://www.checkout-ds24.com/redir/PRODUCT-ID/AFFILIATE-ID/CAMPAIGN-KEY`
 
-## Next Steps
-- Pick a real niche (not "make money app" — that's saturated garbage)
-- Add actual features people want
-- Market on TikTok/X/Reddit like a maniac
-- Iterate until it doesn't suck
+Cookie lasts 180 days (GDPR) or 365 days (US). Last-click attribution. If someone clicks another affiliate's link after yours, you lose the sale.
 
-Good luck, you beautiful degenerate.
+## Compliance
+
+- No adware, spyware, popups, pop-unders
+- No incentivized leads (don't pay people to click)
+- No spam emails
+- No malware or IP cloaking
+- Disclose affiliate relationship where required (FTC)
+
+Break the rules and Digistore24 blacklists you. Don't be a dumbass.
+
+Built with spite. Profits not guaranteed.
